@@ -1,0 +1,49 @@
+& when (@media-common = true) {
+  .checkout-index-index, .page-layout-checkout {
+    .checkout-shipping-address, .modal-slide, .opc-payment {
+      .field {
+
+        legend.label {
+          display: none;
+        }
+
+        .control._with-tooltip {
+          position: initial;
+
+          input {
+            width: 100%;
+          }
+
+          .note {
+            display: none;
+          }
+        }
+
+        .input-text {
+          padding-top: 15px;
+        }
+
+        label.label {
+          position: relative;
+          transform-origin: top left;
+          transform: translate(10px, 41px) scale(1);
+          transition: all .1s ease-in-out;
+          z-index: 1;
+        }
+
+        &.active {
+          label.label {
+            transform: translate(12px, 34px) scale(0.75);
+            color: @color-gray_light;
+          }
+        }
+
+        &.street .field label.label {
+          display: inline-block;
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+  }
+}
