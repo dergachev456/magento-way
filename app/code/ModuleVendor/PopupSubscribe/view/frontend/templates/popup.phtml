@@ -1,0 +1,19 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->get('Magento\Customer\Model\Session');
+?>
+<div id="popup" style="display: none">
+    <?php echo $block->getChildHtml('popup.subscribe')?>
+</div>
+<script type="text/x-magento-init">
+    {
+     "*": {
+        "ModuleVendor_PopupSubscribe/js/helper": {
+            "isLoggedIn": "<?php echo $customerSession->isLoggedIn()?>"
+        }
+    },
+    "#popup": {
+        "ModuleVendor_PopupSubscribe/js/popup": true
+        }
+    }
+</script>

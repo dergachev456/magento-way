@@ -6,4 +6,4 @@
 
 use \Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'ModuleVendor_PopupModal', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'ModuleVendor_PopupSubscribe', __DIR__);

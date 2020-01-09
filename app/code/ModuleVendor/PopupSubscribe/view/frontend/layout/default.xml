@@ -3,8 +3,8 @@
 <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="header.panel">
-            <block class="Magento\Framework\View\Element\Template" name="note-popup" template="ModuleVendor_PopupModal::note.phtml">
-                <block class="Magento\Framework\View\Element\Template" name="popup" template="ModuleVendor_PopupModal::popup.phtml"></block>
+            <block name="popup" template="ModuleVendor_PopupSubscribe::popup.phtml">
+                <block class="Magento\Newsletter\Block\Subscribe" name="popup.subscribe" before="-" template="ModuleVendor_PopupSubscribe::subscribe.phtml"/>
             </block>
         </referenceContainer>
     </body>
