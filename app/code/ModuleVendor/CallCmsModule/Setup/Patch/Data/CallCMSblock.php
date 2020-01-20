@@ -6,7 +6,7 @@ use \Magento\Cms\Model\BlockFactory;
 use \Magento\Framework\Setup\Patch\DataPatchInterface;
 use \Magento\Framework\Setup\ModuleDataSetupInterface;
 
-class SetupCMSblock implements DataPatchInterface
+class CallCMSblock implements DataPatchInterface
 
 {
     protected $blockFactory;
@@ -25,8 +25,8 @@ class SetupCMSblock implements DataPatchInterface
 
         $html = '<a href="#">Cms block</a>';
         $data = [
-            'title' => 'Some CMS block',
-            'identifier' => 'some_cms',
+            'title' => 'Call ways for cms block',
+            'identifier' => 'call_cms',
             'content' => $html,
             'is_active' => 1,
             'stores' => [0],
