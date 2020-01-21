@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Customer\Block\Account\Customer" name="user-links" template="Magento_Customer::user-links.phtml"/>
+        </referenceContainer>
+        <move element="header" destination="user-links" before="-"/>
+        <move element="top.links" destination="user-links" after="-"/>
+        <move element="authorization-link-login" destination="user-links" after="-"/>
+        <move element="register-link" destination="user-links"/>
+        <referenceBlock name="customer" template="Magento_Customer::account/customer2.phtml"/>
+    </body>
+</page>

@@ -1,0 +1,12 @@
+<div class="user-links">
+    <div class="user-menu">My Account</div>
+    <div class="default-links">
+        <?= $block->getChildHtml('header');?>
+        <?php if($block->customerLoggedIn()):?>
+            <?= $block->getChildHtml('top.links');?>
+        <?php else:?>
+            <?= $block->getChildHtml('authorization-link-login');?>
+            <?= $block->getChildHtml('register-link');?>
+        <?php endif; ?>
+    </div>
+</div>
