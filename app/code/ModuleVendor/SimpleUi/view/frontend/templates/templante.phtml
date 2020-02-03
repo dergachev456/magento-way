@@ -1,0 +1,18 @@
+<din data-bind="scope: 'my-component'">
+    <h1 data-bind="text: title"></h1>
+</din>
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "my-component" : {
+                    "component": "ModuleVendor_SimpleUi/js/component",
+                    "title" : "Ui component title"
+                }
+            }
+        }
+    }
+}
+</script>
