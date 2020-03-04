@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright    Copyright (C) 2020 iFuel (www.ifuelinteractive.com)
+ * @author       Anton Semiletov <asemiletov@ifuelinteractive.com>
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <block class="Ifuel\EmailBanner\Block\EmailBanner" template="Ifuel_EmailBanner::email-banner.phtml"
+                name="email.banner" before="top.promo.container">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Ifuel\EmailBanner\ViewModel\Config</argument>
+                </arguments>
+                <block class="Magento\Cms\Block\Block" name="email.banner.content">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">email-banner-content</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
