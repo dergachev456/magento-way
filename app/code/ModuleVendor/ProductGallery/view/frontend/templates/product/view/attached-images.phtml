@@ -1,0 +1,42 @@
+<?php
+/**
+ *
+ * @theme        Funworld
+ * @copyright    Copyright (C) 2020 iFuel (www.ifuelinteractive.com)
+ * @author       Sergey Kosenko <skosenko@ifuelinteractive.com>
+ */
+
+/**
+ * Attached images template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Gallery
+ */
+?>
+<?php /* @escapeNotVerified */
+$json=$block->getGalleryImagesJson();
+$array = json_decode($json, true);
+?>
+
+<div data-mage-init='{
+        "accordion":{
+            "active": [1, 2],
+            "collapsible": true,
+            "openedState": "active",
+            "multipleCollapsible": false
+        }}'
+     class="asset">
+    <div data-role="collapsible">
+        <div class="assets-trigger" data-role="trigger">
+            <h4 class="asset-heading"><?= $block->escapeHtml(__('Assets'))?></h4>
+        </div>
+    </div>
+    <div class="asset-content" data-role="content">
+        <ul class="attached-list">
+            <?php foreach ($array as $image): ?>
+                <li class="attached-item">
+                    <a href="<?= $image['direct'] ?>" download><img src="<?= $image['thumb'];?>" alt="Image preview" class="attached-image"/><br/><?= $block->escapeHtml(__('Download'))?></a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>

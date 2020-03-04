@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Ifuel_ProductGallery
+ *
+ * @category     Ifuel
+ * @package      Ifuel_ProductGallery
+ * @copyright    Copyright (C) 2020 iFuel (www.ifuelinteractive.com)
+ * @author       Jesus Rodriguez <jrodriguez@ifuelinteractive.com>
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Ifuel_ProductGallery" setup_version="1.0.0">
+        <sequence>
+            <module name="Magento_Catalog"/>
+        </sequence>
+    </module>
+</config>
