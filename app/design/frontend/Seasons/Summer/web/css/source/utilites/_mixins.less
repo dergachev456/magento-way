@@ -7,3 +7,59 @@
   margin-left: -50vw;
   margin-right: -50vw;
 }
+
+// Custom square checkbox
+
+/*
+* Markup example
+*
+* <label class="Container">
+*   <input type="checkbox" name="input"/>
+*   <span class="checkmark"></span>
+* </label>
+*
+*/
+.square_checkbox(@container, @checkmark,  @border_color: @form-element-input__border-color) {
+  .@{container} {
+    .lib-css(user-select, none, 1);
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    input:checked ~ .@{checkmark}:after {
+      display: block;
+    }
+
+    .@{checkmark} {
+      .lib-css(border, 1px solid @border_color);
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 17px;
+      width: 16px;
+
+      &:after {
+        .lib-css(border, solid @border_color);
+        .lib-css(transform, rotate(45deg), 1);
+        content: "";
+        position: absolute;
+        display: none;
+        left: 5px;
+        top: 2px;
+        width: 4px;
+        height: 8px;
+        border-width: 0 2px 2px 0;
+      }
+    }
+  }
+}
