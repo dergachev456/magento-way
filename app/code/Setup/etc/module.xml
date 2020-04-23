@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright    Copyright (C) 2020 iFuel (www.ifuelinteractive.com)
+ * @author       Sergey Kosenko <skosenko@ifuelinteractive.com>
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Ifuel_Setup">
+        <sequence>
+            <module name="Magento_Cms" />
+        </sequence>
+    </module>
+</config>
