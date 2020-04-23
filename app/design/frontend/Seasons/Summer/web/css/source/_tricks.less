@@ -1,0 +1,20 @@
+/*
+  Hide overflowed text and add three dots instead of
+*
+* Example of the markup
+  <div>
+    <p>
+      Hello very very long text.
+    </p>
+  </div>
+*
+*/
+div {
+  width: 100px;
+}
+
+p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
