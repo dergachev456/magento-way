@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @module       Magento_Theme
+ * @copyright    Copyright (C) 2020 iFuel (www.ifuelinteractive.com)
+ * @author       Sergey Kosenko <skosenko@ifuelinteractive.com>
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!-- Custom Favicons -->
+        <link rel="mask-icon" src="Magento_Theme::icons/safari-pinned-tab.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" src="Magento_Theme::icons/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" src="Magento_Theme::icons/android-chrome-192x192.png"/>
+        <link rel="icon" type="image/png" sizes="256x256" src="Magento_Theme::icons/android-chrome-256x256.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" src="Magento_Theme::icons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" src="Magento_Theme::icons/favicon-16x16.png" />
+        <link rel="manifest" src="Magento_Theme::icons/site.webmanifest"/>
+
+        <!-- Custom Metas -->
+        <meta name="msapplication-TileColor" content="#b8c466"/>
+        <meta name="msapplication-TileImage" content="Magento_Theme::icons/mstile-150x150.png"/>
+        <meta name="theme-color" content="#ffffff"/>
+    </head>
+</page>
