@@ -1,0 +1,254 @@
+& when (@media-common = true) {
+    .page-header {
+        .lib-css(background, @color-white);
+    }
+
+    .header.content {
+        .lib-vendor-prefix-display();
+        .lib-vendor-box-align(center);
+        .lib-css(justify-content, space-between);
+
+        &:before,
+        &:after {
+            display: none;
+        }
+
+        .nav-toggle {
+            position: static;
+        }
+
+        .block-search {
+            margin-top: 4px;
+            width: 20px;
+            height: 20px;
+            padding: 0;
+
+            .label {
+                height: 20px;
+                width: 20px;
+                clip: unset;
+
+                &:before {
+                    width: 20px;
+                    height: 20px;
+                    margin: 0;
+                    content: '';
+                    background: url("@{baseDir}/images/search-icon.svg") no-repeat center;
+                    vertical-align: unset;
+                }
+            }
+
+            .control {
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: 25px;
+                right: 25px;
+                border: none;
+            }
+
+            .form.minisearch {
+                &.active {
+                    .control {
+                        overflow: visible;
+                        width: 300px;
+                        height: auto;
+                    }
+
+                    .input-text {
+                        .lib-css(border, 1px solid @color_pink_theme__secondary);
+                        height: 30px;
+                        padding: 15px;
+                    }
+
+                    .actions {
+                        display: block;
+                    }
+                }
+
+                .input-text {
+                    height: 0;
+                    padding: 0;
+                    border: none;
+                }
+
+                .actions {
+                    display: none;
+                    right: 25px;
+                    top: 25px;
+                }
+            }
+        }
+    }
+
+    .user-toggle {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url("@{baseDir}/images/user-icon.svg") no-repeat center;
+    }
+
+    .user-nav {
+        .lib-dropdown(
+            @_toggle-selector: ~'.user-toggle',
+            @_options-selector: ~'.user-links',
+            @_dropdown-list-width: 250px,
+            @_dropdown-list-position-right: 0,
+            @_dropdown-list-pointer-position: right,
+            @_dropdown-list-pointer-position-left-right: 2px,
+            @_dropdown-list-z-index: 101,
+            @_dropdown-list-item-padding: false,
+            @_dropdown-list-item-hover: false,
+            @_icon-font-position: before,
+            @_dropdown-toggle-icon-content: '',
+            @_dropdown-toggle-active-icon-content: ''
+        );
+    }
+
+    .customer-navigation {
+        .lib-vendor-prefix-display();
+        .lib-vendor-box-align(center);
+        .lib-css(justify-content, flex-end);
+        z-index: 100;
+    }
+
+    .minicart-wrapper {
+        line-height: 14px;
+
+        .action.showcart  .counter.qty {
+            .lib-css(background, @color_green_accent__primary);
+            height: 20px;
+            margin: 0;
+            line-height: 20px;
+        }
+    }
+
+    .minicart-wrapper .action.showcart:before,
+    .minicart-wrapper .action.showcart.active:before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background: url("@{baseDir}/images/trash-can.svg") no-repeat center;
+    }
+
+    .user-nav {
+        max-height: 20px;
+    }
+
+    .header.links {
+        padding: 20px;
+        margin: 0;
+
+        li {
+            list-style: none;
+        }
+    }
+
+    .user-links {
+        a {
+            .lib-heading(h3);
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .header.content {
+        .logo {
+            margin: 0;
+        }
+
+        .customer-navigation {
+            margin-left: 15px;
+        }
+
+        .block-search,
+        .minicart-wrapper {
+            margin-top: 0;
+        }
+
+        .form.minisearch {
+            .field.search .control {
+                position: absolute;
+                top: unset;
+                bottom: -32px;
+                padding: 0;
+            }
+
+            &.active .control {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .minicart-wrapper,
+        .block-search {
+            margin: 0 10px 0 0;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m){
+    .page-header {
+        .panel.wrapper {
+            .lib-css(background-color, @color_green_accent__primary);
+            min-height: 43px;
+            box-sizing: border-box;
+        }
+
+        .header.content {
+            padding-top: 5px;
+            padding-bottom: 20px;
+
+            .logo {
+                margin: 15px 0 0;
+            }
+
+            .links-block {
+                display: none;
+            }
+
+            .compare.wrapper {
+                display: none;
+            }
+        }
+
+        .header.panel {
+            .lib-vendor-prefix-display();
+            .lib-css(justify-content, center, 1);
+            padding-bottom: 9px;
+            padding-top: 9px;
+
+            > .header.links {
+                float: none;
+                margin: 0;
+
+                .authorization-link {
+                    a {
+                        .lib-css(color, @color_pink_theme__secondary);
+                        .lib-css(font-weight, @font-weight__semibold);
+                        text-transform: uppercase;
+                    }
+
+                    &:after {
+                        display: none;
+                    }
+                }
+
+                .customer-welcome {
+                    display: none;
+                }
+            }
+        }
+
+        .customer-navigation,
+        .nav-sections {
+            width: 35%;
+            margin: 12px 0 0;
+        }
+
+        .minicart-wrapper,
+        .block-search {
+            margin: 0 25px 0 0;
+        }
+    }
+}

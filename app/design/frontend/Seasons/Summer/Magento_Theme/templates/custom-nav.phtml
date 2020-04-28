@@ -1,0 +1,30 @@
+<?php
+/**
+ * @module       Magento_Theme
+ * @copyright    Copyright (C) 2020 iFuel (www.ifuelinteractive.com)
+ * @author       Sergey Kosenko <skosenko@ifuelinteractive.com>
+ */
+?>
+<div class="user-nav"
+     data-block="dropdown"
+     >
+    <span class="user-toggle" data-trigger="trigger"></span>
+    <div class="links-block"
+         data-mage-init='{
+            "dropdownDialog": {
+                "appendTo": "[data-block=dropdown]",
+                "triggerTarget": "[data-trigger=trigger]",
+                "timeout": 2000,
+                "closeOnMouseLeave": false,
+                "closeOnEscape": true,
+                "autoOpen": false,
+                "triggerClass": "active",
+                "parentClass": "active",
+                "buttons": []
+            }
+        }'>
+        <div class="user-links">
+            <?php echo $block->getChildHtml('top.links');?>
+        </div>
+    </div>
+</div>

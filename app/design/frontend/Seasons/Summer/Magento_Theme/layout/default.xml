@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @module       Magento_Theme
+ * @copyright    Copyright (C) 2020 iFuel (www.ifuelinteractive.com)
+ * @author       Sergey Kosenko <skosenko@ifuelinteractive.com>
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header-wrapper">
+            <container name="customer-navigation" htmlClass="customer-navigation" htmlTag="div" >
+                <block class="Magento\Framework\View\Element\Template" name="custom-nav" template="Magento_Theme::custom-nav.phtml" after="logo"/>
+            </container>
+        </referenceContainer>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_img_width" xsi:type="number">320</argument>
+                <argument name="logo_img_height" xsi:type="number">80</argument>
+            </arguments>
+        </referenceBlock>
+
+<!--        Remove elements-->
+        <referenceBlock name="register-link" remove="true"/>
+<!--        Move elements from their default places-->
+
+        <move element="navigation.sections" destination="header-wrapper" before="logo"/>
+        <move element="minicart" destination="customer-navigation" after="top.search"/>
+        <move element="top.search" destination="customer-navigation" before="-"/>
+        <move element="top.links" destination="custom-nav" after="-"/>
+    </body>
+</page>
